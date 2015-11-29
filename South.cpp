@@ -3,20 +3,21 @@
 #include "South.h"
 //------------------------------//------------------------------
 //设置一些初始值
-CSouth::CSouth(void): m_fMoveSpeed(80.0f)
+CSouth::CSouth(void): m_fMoveSpeed(1.0f)
 	//左键没有按下
 	, m_bLeftButtonDown(false)
 	//左键点下时初始坐标为0
 	, m_fpushX(0)
 	//初始角速度是2.5
-	, m_fAngle(0.01)
+	, m_fAngle(1.0)
 	//开始时碰撞检测关闭
 	, m_bPeng(false)
 	//右键点下时初始坐标也为0
 	, m_fpushY(0)
 {
 	//出生点为000
-	m_vPosition = osg::Vec3(20000.0, 1000,1000.0f);
+	//m_vPosition = osg::Vec3(20000.0, 1000,1000.0f);
+	m_vPosition = osg::Vec3(0.0, 0.0,3.0f);
 	//初始角度
 	m_vRotation = osg::Vec3(2.0*osg::PI_4,0.0*osg::PI_4, 2.0*osg::PI_4);
 }

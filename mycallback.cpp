@@ -31,7 +31,7 @@ int main(int argc,char **argv)
 	osg::Group* root=new osg::Group;
 	osg::Node *node =osgDB::readNodeFile("glider.osg");
 	osg::MatrixTransform* transform=new osg::MatrixTransform;
-	transform->setUpdateCallback(new MyTransformCallback);
+	transform->setUpdateCallback(new MyTransformCallback(10.0f));
 	transform->addChild(transform);
 	viewer.setSceneData(root);
 	viewer.run();

@@ -20,14 +20,14 @@ void main()
 {
 	osgViewer::Viewer viewer;
 	osg::ref_ptr<osg::Group> gp=new osg::Group;
-	gp->addChild(CreateStair());
+	//gp->addChild(CreateStair());
 	osg::ref_ptr<osg::Geode> sphere=new osg::Geode;
 	sphere->addDrawable(new osg::ShapeDrawable(new osg::Sphere(osg::Vec3(0.0f, -10.0f,1400.0f),100.0)));
-	gp->addChild(sphere);
+	//gp->addChild(sphere);
 
-	//osg::ref_ptr<osg::Node> geode1=new osg::Node;
-	//geode1=osgDB::readNodeFile("E:/3rdpart/OSG/OpenSceneGraph/data/ceep.ive");
-	//gp->addChild(geode1);
+	osg::ref_ptr<osg::Node> geode1=new osg::Node;
+	geode1=osgDB::readNodeFile("E:/3rdpart/OSG/OpenSceneGraph/data/ceep.ive");
+	gp->addChild(geode1);
 	viewer.setSceneData(gp.get());
 	//viewer.setSceneData(osgDB::readNodeFile("E:/SourceCode/OSG/OSGData/Robot/right/car.ive"));
 	viewer.setCameraManipulator(new CSouth());
